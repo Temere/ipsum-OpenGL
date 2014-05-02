@@ -2,30 +2,33 @@ package com.ipsum.graphics;
 
 
 import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
-public class Display {
+public class Screen
+{
 
     private int width;
     private int height;
 
-    public Display(int width, int height)
+    public Screen(int width, int height)
     {
         this.width = width;
         this.height = height;
 
-        /* Create Display */
+        /* Create Screen */
         try
         {
-            org.lwjgl.opengl.Display.setDisplayMode(new DisplayMode(width, height));
-            org.lwjgl.opengl.Display.create();
-            org.lwjgl.opengl.Display.setResizable(true);
+					Display.setDisplayMode(new DisplayMode(width, height));
+          Display.create();
+          Display.setResizable(true);
         }
         catch (LWJGLException e)
         {
             e.printStackTrace();
         }
     }
+	
     public boolean isCloseRequested()
     {
         return org.lwjgl.opengl.Display.isCloseRequested();

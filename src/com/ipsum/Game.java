@@ -1,7 +1,7 @@
 package com.ipsum;
 
 
-import com.ipsum.graphics.Display;
+import com.ipsum.graphics.Screen;
 
 public class Game
 {
@@ -9,7 +9,7 @@ public class Game
     public Game()
     {
         /* Create the display */
-        Display Screen = new Display(800,600);
+        Screen Screen = new com.ipsum.graphics.Screen(800,600);
 
         /* Main-Loop */
         while(!Screen.isCloseRequested())
