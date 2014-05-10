@@ -2,21 +2,26 @@ package com.ipsum;
 
 
 import com.ipsum.graphics.Screen;
+import com.ipsum.Entity.Tile;
 
 public class Game
 {
 
   public Game()
   {
-      /* Create the display */
-      Screen Screen = new com.ipsum.graphics.Screen(800,600);
 
-      /* Main-Loop */
-      while(!Screen.isCloseRequested())
-      {
+    /* Create the display */
+    Screen Screen = new com.ipsum.graphics.Screen(800,600);
+    Tile t = new Tile(10,10);
 
-          Screen.Update();
-      }
+    Screen.initOpenGL();
+
+    /* Main-Loop */
+    while(!Screen.isCloseRequested())
+    {
+      t.render();
+      Screen.Update();
+    }
 
 
 
